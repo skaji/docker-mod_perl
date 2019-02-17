@@ -16,7 +16,7 @@ RUN set -eux; \
   ./Configure -des -Dprefix=$perl_prefix -Dman1dir=none -Dman3dir=none -DDEBUGGING=-g -Duseshrplib -Duseithreads; \
   make -j8 install; \
   cd ..; \
-  rm -rf perl-$perl_version.tar.xz perl-$perl_version $perl_prefix/bin/perl$perl_version; \
+  rm -rf perl-$perl_version* $perl_prefix/bin/perl$perl_version; \
   curl --compressed -fsSL https://git.io/cpm | \
     $perl_prefix/bin/perl - install -g Plack mod_perl2; \
   rm -rf ~/.perl-cpm;
