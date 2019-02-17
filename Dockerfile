@@ -6,9 +6,7 @@ ARG perl_version=5.28.1
 RUN set -eux; \
   apt-get update; \
   apt-get install -y --no-install-recommends gcc make tar curl ca-certificates; \
-  rm -rf /var/lib/apt/lists/*;
-
-RUN set -eux; \
+  rm -rf /var/lib/apt/lists/*; \
   cd /tmp; \
   curl -fsSL -O https://www.cpan.org/src/5.0/perl-$perl_version.tar.gz; \
   tar xf perl-$perl_version.tar.gz; \
